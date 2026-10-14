@@ -6,41 +6,38 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Request a quote | Don Andres N.V.</title>
 <meta name="description" content="Request a shipping or transport quote from Don Andres N.V. Containers, loose cargo, vehicles and special loads between the ABC islands, Trinidad and the Dominican Republic.">
-<meta name="theme-color" content="#142334">
+<meta name="theme-color" content="#9d2a2a">
 <link rel="icon" href="img/logo-wheel.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="index.html"><img src="img/logo-wheel.png" alt="" width="38" height="40"><span>Don Andres N.V.<small>Shipping and transport, Bonaire</small></span></a>
-    <button class="menu-btn" aria-label="Menu" aria-expanded="false"><i class="ph ph-list"></i></button>
+    <a class="brand" href="index.html"><img src="img/logo-wheel.png" alt="" width="34" height="36">Don Andres N.V.</a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false">Menu</button>
     <ul>
-      <li><a href="schedule.html">Sailing schedule</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
       <li><a href="index.html#routes">Routes</a></li>
-      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#operations">Operations</a></li>
       <li><a href="index.html#fleet">Fleet</a></li>
-      <li><a href="index.html#story">About</a></li>
+      <li><a href="index.html#story">Company</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
-    <span class="lang" aria-label="Language"><span class="on">EN</span><span>ES</span><span>NL</span><span>PAP</span></span>
-    <a class="btn btn-red" href="quote.html" aria-current="page"><i class="ph ph-package"></i>Request a quote</a>
+    <a class="btn" href="quote.html" aria-current="page">Request a quote</a>
   </div>
 </header>
 
 <div class="wrap page-head">
-  <span class="kicker">Request a quote</span>
-  <h1 class="display" style="font-size:clamp(2rem,4.4vw,3.3rem)">Tell us what moves.</h1>
-  <p class="lede">The operations desk answers within one working day with price, sailing and cut-off. For urgent cargo call <a href="tel:+5997176991">+599 717 6991</a>.</p>
+  <h1 class="d d2">Tell us what moves</h1>
+  <p class="lede">The operations desk answers within one working day with price, sailing and cut-off. Urgent cargo: call <a href="tel:+5997176991">+599 717 6991</a>.</p>
 </div>
 
-<section style="padding-top:28px">
-  <div class="wrap split" style="align-items:start">
+<section style="padding-top:clamp(28px,4vw,40px)">
+  <div class="wrap two">
     <form class="form" data-quote novalidate>
       <div><label for="company">Company</label><input id="company" name="company" required autocomplete="organization"><p class="err">Company name is needed.</p></div>
       <div><label for="name">Your name</label><input id="name" name="name" required autocomplete="name"><p class="err">Your name is needed.</p></div>
@@ -80,19 +77,15 @@
       <div><label for="qty">Number of units</label><input id="qty" name="units" type="number" min="1" value="1"></div>
       <div class="full"><label for="msg">Details</label><textarea id="msg" name="details" rows="5" placeholder="Weight, dimensions, delivery address on Bonaire, anything the desk should know."></textarea></div>
       <div class="full notice" id="quote-result" hidden></div>
-      <div class="full" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
-        <button class="btn btn-red" type="submit"><i class="ph ph-paper-plane-tilt"></i>Send request</button>
-        <span style="color:var(--muted);font-size:.9rem">No account needed. No spam.</span>
+      <div class="full" style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+        <button class="btn red" type="submit">Send request</button>
+        <span style="color:var(--muted);font-size:.95rem">No account needed. No spam.</span>
       </div>
     </form>
     <aside>
-      <div class="media wide"><img src="img/pier-truck.jpg" alt="Don Andres truck leaving the Kralendijk pier with a container" loading="lazy"></div>
-      <div class="notice" style="margin-top:20px">
-        <strong>Full containers on the Monday service</strong><br>Curaçao and Aruba sail every Monday with full container loads only. Loose cargo goes on the counter days, see the <a href="schedule.html">schedule</a>.
-      </div>
-      <div class="notice" style="margin-top:14px">
-        <strong>Prefer to talk</strong><br>Operations <a href="tel:+5997176991">+599 717 6991</a>, documentation <a href="tel:+5997176961">+599 717 6961</a>. Mon to Fri 08:00 to 12:00 and 13:30 to 17:30.
-      </div>
+      <div style="background:var(--ink);aspect-ratio:4/3;overflow:hidden"><img src="img/pier-truck.jpg" alt="Don Andres truck leaving the Kralendijk pier with a 40 foot container" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="notice" style="margin-top:24px"><strong>Monday service takes full containers only.</strong> Curaçao and Aruba sail every Monday, FCL. Loose cargo goes on the counter days, see the <a href="schedule.html">schedule</a>.</div>
+      <div class="notice"><strong>Prefer to talk.</strong> Operations <a href="tel:+5997176991">+599 717 6991</a>, documentation <a href="tel:+5997176961">+599 717 6961</a>. Mon to Fri 08:00 to 12:00 and 13:30 to 17:30.</div>
     </aside>
   </div>
 </section>

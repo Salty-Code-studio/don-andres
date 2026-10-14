@@ -36,9 +36,9 @@
   }
 
   function tag(status) {
-    if (status === "open") return '<span class="tag tag-open">Booking open</span>';
-    if (status === "proj") return '<span class="tag tag-proj">Projected</span>';
-    return '<span class="tag tag-req">On request</span>';
+    if (status === "open") return '<span class="st open">Open</span>';
+    if (status === "proj") return '<span class="st proj">Projected</span>';
+    return '<span class="st req">On request</span>';
   }
 
   function renderBoard(el, limit, withRequestRows) {
