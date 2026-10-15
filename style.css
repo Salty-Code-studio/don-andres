@@ -216,3 +216,27 @@ footer .bottom{margin-top:32px;padding-top:18px;border-top:1px solid var(--line)
   .rv.in{opacity:1;transform:none}
 }
 .preview-note{position:fixed;left:12px;bottom:12px;z-index:30;background:var(--ink);color:#fff;font-size:.76rem;padding:7px 10px;border-radius:4px;opacity:.85}
+
+/* homepage sailing band */
+.sched{background:var(--navy-deep);color:#F6F4EE;position:relative;overflow:hidden}
+.sched::before{content:"";position:absolute;inset:0;background:url(img/dawn-deck.jpg) center 40%/cover no-repeat;opacity:.3}
+.sched::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,23,36,.2),rgba(13,23,36,.85))}
+.sched .wrap{position:relative;z-index:1}
+.sched .kicker{color:#F29A9D}
+.sched .lede{color:rgba(246,244,238,.78)}
+.sched-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.sail-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.sail-card{background:var(--surface);color:var(--ink);border-radius:var(--r);padding:26px 26px 24px;display:flex;flex-direction:column;gap:16px;box-shadow:var(--shadow)}
+.sc-date{display:flex;align-items:baseline;gap:10px;line-height:1}
+.sc-date strong{font-size:3.6rem;font-weight:700;letter-spacing:-.04em;font-variation-settings:"wdth" 108}
+.sc-date span{font-weight:600;color:var(--muted);font-size:1.05rem}
+.sail-card h3{font-size:1.15rem}
+.sail-card p{color:var(--muted);font-size:.92rem;margin-top:4px}
+.sail-card .tag{align-self:flex-start}
+.sail-card .btn{margin-top:auto;align-self:flex-start}
+.sail-card.next{background:var(--red);color:#fff}
+.sail-card.next .sc-date span,.sail-card.next p{color:rgba(255,255,255,.8)}
+.sail-card.next .tag{background:rgba(255,255,255,.18);color:#fff}
+.sail-card.next .btn-red{background:var(--ink);color:#F6F4EE}
+.sail-card.next .btn-red:hover{background:var(--navy-deep)}
+@media (max-width:900px){.sail-cards{grid-template-columns:1fr}.sched-top .btn{order:2}}

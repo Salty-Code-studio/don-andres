@@ -57,29 +57,21 @@
   </div>
 </section>
 
-<section id="schedule">
+<section id="schedule" class="sched">
   <div class="wrap">
-    <div class="rv">
-      <span class="kicker">Sailing schedule</span>
-      <h2 class="display">Know when your cargo moves. Before you call.</h2>
-      <p class="lede" style="margin-top:14px">Every sailing, its cut-off and its arrival in one place. Updated by the operations desk, not by email on request.</p>
-    </div>
-    <div class="board rv" style="margin-top:32px">
-      <div class="board-head">
-        <h3>Next sailings</h3>
-        <p>Dates after the last published sailing follow the two-week rhythm and are marked projected.</p>
+    <div class="sched-top rv">
+      <div>
+        <span class="kicker">Sailing schedule</span>
+        <h2 class="display">Know when your cargo moves.</h2>
+        <p class="lede" style="margin-top:14px">The next three sailings, with cut-off and arrival. No email needed.</p>
       </div>
-      <table>
-        <thead><tr><th>Route</th><th>Departs</th><th>Arrives</th><th>Vessel</th><th>Status</th><th></th></tr></thead>
-        <tbody data-board="6"></tbody>
-      </table>
-      <div class="board-foot">
-        <span>Full containers only on the Monday Aruba service. Loose cargo has its own counter days.</span>
-        <a href="schedule.html" style="color:var(--ink);font-weight:600;text-decoration:none">Full schedule and counter hours <i class="ph ph-arrow-right"></i></a>
-      </div>
+      <a class="btn btn-ghost" href="schedule.html">Full schedule and counter hours <i class="ph ph-arrow-right"></i></a>
     </div>
+    <div class="sail-cards rv" data-sailing-cards="3"></div>
   </div>
 </section>
+
+
 
 <section id="routes" style="background:var(--surface);border-block:1px solid var(--line)">
   <div class="wrap split">

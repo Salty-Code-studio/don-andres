@@ -60,6 +60,18 @@
 
   document.querySelectorAll("[data-board]").forEach(el => renderBoard(el, parseInt(el.dataset.board, 10) || 6, el.hasAttribute("data-request-rows")));
 
+  function renderCards(el, count) {
+    const r = rows(count);
+    el.innerHTML = r.map((x, i) => `<article class="sail-card${i === 0 ? " next" : ""}">
+      <div class="sc-date"><span>${x.dep.toLocaleDateString("en-GB", { weekday: "short" })}</span><strong>${x.dep.getDate()}</strong><span>${x.dep.toLocaleDateString("en-GB", { month: "short" })}</span></div>
+      <div><h3>${x.route}</h3><p>Arrives ${fmt(x.arr)}. Cut-off ${fmt(x.cutoff, { weekday: undefined })}. ${x.vessel.replace(/ I$/, "\u00a0I")}.</p></div>
+      ${tag(x.status)}
+      <a class="btn btn-red" href="quote.html?route=${encodeURIComponent(x.route)}&date=${x.dep.toISOString().slice(0,10)}">Book space</a>
+    </article>`).join("");
+  }
+  document.querySelectorAll("[data-sailing-cards]").forEach(el => renderCards(el, parseInt(el.dataset.sailingCards, 10) || 3));
+
+
   const next = trinidadSailings(1)[0];
   document.querySelectorAll("[data-next-trinidad]").forEach(el => { el.textContent = fmt(next.date, { month: "long" }); });
   document.querySelectorAll("[data-next-trinidad-note]").forEach(el => { el.textContent = next.projected ? "Projected on the two-week rhythm, confirm with operations." : "Published sailing. Booking open."; });
