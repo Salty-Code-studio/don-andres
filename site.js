@@ -61,7 +61,11 @@
   document.querySelectorAll("[data-board]").forEach(el => renderBoard(el, parseInt(el.dataset.board, 10) || 6, el.hasAttribute("data-request-rows")));
 
   function renderCards(el, count) {
-    const r = rows(count);
+    const only = el.dataset.only, dest = el.dataset.dest;
+    let r = rows(count * 4);
+    if (only) r = r.filter(x => x.route.indexOf(only) === 0);
+    if (dest) r = r.map(x => Object.assign({}, x, { route: x.route.replace("Curaçao", dest), arr: addDays(x.dep, 3) }));
+    r = r.slice(0, count);
     el.innerHTML = r.map((x, i) => `<article class="sail-card${i === 0 ? " next" : ""}">
       <div class="sc-date"><span>${x.dep.toLocaleDateString("en-GB", { weekday: "short" })}</span><strong>${x.dep.getDate()}</strong><span>${x.dep.toLocaleDateString("en-GB", { month: "short" })}</span></div>
       <div><h3>${x.route}</h3><p>Arrives ${fmt(x.arr)}. Cut-off ${fmt(x.cutoff, { weekday: undefined })}. ${x.vessel.replace(/ I$/, "\u00a0I")}.</p></div>
@@ -110,4 +114,20 @@
       location.href = "mailto:info@donandresnv.com?subject=" + encodeURIComponent("Quote request: " + (data.route || "shipping")) + "&body=" + encodeURIComponent(body);
     });
   }
+})();
+
+/* theme toggle: remembers the viewer's choice, falls back to the system setting */
+(function () {
+  const root = document.documentElement;
+  const mq = window.matchMedia("(prefers-color-scheme: dark)");
+  const meta = document.querySelector('meta[name="theme-color"]');
+  const isDark = () => root.dataset.theme ? root.dataset.theme === "dark" : mq.matches;
+  const sync = () => { if (meta) meta.setAttribute("content", isDark() ? "#0D131B" : "#142334"); };
+  sync();
+  document.querySelectorAll(".theme-btn").forEach(b => b.addEventListener("click", () => {
+    const next = isDark() ? "light" : "dark";
+    root.dataset.theme = next;
+    try { localStorage.setItem("da-theme", next); } catch (e) {}
+    sync();
+  }));
 })();
